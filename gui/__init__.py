@@ -20,7 +20,7 @@ from kivy.uix.progressbar import ProgressBar
 from kivy.uix.scrollview import ScrollView
 
 from crypto import is_valid_pass, AuthToken
-from data import user_exists
+from data import my_db
 
 
 class CreateAccountWindow(Screen):
@@ -29,11 +29,14 @@ class CreateAccountWindow(Screen):
     box_color = get_color_from_hex("#0ab26c")
 
     def create(self):
-        if not is_valid_pass(self.ids.pass_input_1.text) or self.ids.pass_input_1.text is not self.ids.pass_input_2.text:
-            self.message = "Invalid password"
-        elif user_exists(self.ids.user_input.text):
+        token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input_1.text or " ")
+        if my_db.user_exists(token.user_id):
             self.message = "User already taken"
+        elif not is_valid_pass(self.ids.pass_input_1.text) or \
+                self.ids.pass_input_1.text is not self.ids.pass_input_2.text:
+            self.message = "Invalid password"
         else:
+            my_db.add_user(token)
             self.manager.current = "login"
 
     def validate(self):
@@ -47,7 +50,6 @@ class CreateAccountWindow(Screen):
 
 
 class LoginWindow(Screen):
-
     box_color = get_color_from_hex("#0ab26c")
 
     def __init__(self, **kw):
@@ -68,7 +70,6 @@ class LoginWindow(Screen):
 
 
 class LoadingWindow(Screen):
-
     box_color = get_color_from_hex("#0c6021")
 
     def animate(self, i, **kwargs):
@@ -171,5 +172,6 @@ class PyCalendarApp(App):
 
     def get_mini_2(self):
         return PyCalendarWindow.get_mini_2()
+
 
 kv = Builder.load_file("gui/PyCalendar.kv")

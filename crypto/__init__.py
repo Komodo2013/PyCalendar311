@@ -1,6 +1,7 @@
 import re
 from datetime import datetime, timedelta
 
+import data
 from crypto.hash import MyHash
 from crypto.crypto_utils import packet_to_alpha_numeric, bytes_to_alpha_numeric
 
@@ -43,8 +44,6 @@ class AuthToken:
         del hasher
         self.__expiration = datetime.now() + timedelta(hours=12)
 
-        #with open("")
-
     def get_create(self):
         return self.__create
 
@@ -62,6 +61,9 @@ class AuthToken:
 
     def get_pass_hash(self):
         return self.__pass_hash
+
+    def is_valid(self):
+        return data.my_db
 
     create = property(get_create, None, None)
     user = property(get_user, None, None)
