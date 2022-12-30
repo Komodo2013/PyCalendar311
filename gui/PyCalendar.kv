@@ -1,6 +1,9 @@
+#: import FadeTransition kivy.uix.screenmanager.FadeTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
 
 WindowManager:
     id: window_manager
+    transition: FadeTransition(clearcolor=(0,0,0,.5))
     LoginWindow:
     CreateAccountWindow:
     LoadingWindow:
@@ -92,7 +95,7 @@ WindowManager:
         size_hint: (None, None)
         size: 192, 30
         pos: root.width/2 - 96, root.height * .35
-        on_release: root.create()
+        on_release: root.manager.transition = SlideTransition(); root.manager.transition.direction = "up"; root.create()
 
 <LoginWindow>:
     name: "login"
@@ -147,14 +150,14 @@ WindowManager:
         size_hint: (None, None)
         size: 128, 30
         pos: root.width/2 - 64, root.height * .53 - 80
-        on_release: root.login()
+        on_release: root.manager.transition = FadeTransition(clearcolor=(0,0,0,.5)); root.login()
 
     Button:
         text: "New..."
         size_hint: (None, None)
         size: 128, 30
         pos: root.width/2 - 64, root.height * .53 - 120
-        on_release: root.new_account()
+        on_release: root.manager.transition = SlideTransition(); root.manager.transition.direction = "down"; root.new_account()
 
 
 <LoadingWindow>:

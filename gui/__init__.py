@@ -4,7 +4,7 @@ from kivy.app import App
 from kivy.clock import Clock
 from kivy.lang import Builder
 from kivy.properties import StringProperty
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition, SlideTransition
 from kivy.utils import get_color_from_hex
 
 import threading
@@ -54,7 +54,7 @@ class LoginWindow(Screen):
         super().__init__(**kw)
 
     def login(self):
-        token = AuthToken(self.ids.user_input.text, self.ids.pass_input.text)
+        token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input.text or " ")
         print(token.get_key())
         self.manager.current = "loading"
 

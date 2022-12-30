@@ -179,10 +179,22 @@ def packets_from_file(location):
     return create_packets(raw_bytes)
 
 
+def bytes_to_alpha_numeric(bytes):
+    """
+    Transforms a singe packet into an alpha_numeric representation of the value
+    :param bytes: a list containing ints (bytes)
+    :return: String a representation of the values, 2 bits lost/ byte
+    """
+    text = ""
+    for c in bytes:
+        char = alpha_numeric_values[c % len(alpha_numeric_values)]
+        text += char
+    return text
+
+
 def packet_to_alpha_numeric(matrix):
     """
     Transforms a singe packet into an alpha_numeric representation of the value
-    TODO: we can change this to actually read in bits, 6 at a time to get more characters, as is just takes lsbits
     :param matrix: a 2d list containing ints (bytes)
     :return: String a representation of the values, 2 bits lost/ byte
     """
