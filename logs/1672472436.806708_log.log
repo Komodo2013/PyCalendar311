@@ -1,0 +1,5 @@
+[kivy ] [WARNING ] :: 2022-12-31 00:40:36,807 - stderr: Traceback (most recent call last):
+[kivy ] [WARNING ] :: 2022-12-31 00:40:36,807 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\main.py", line 37, in <module>
+[kivy ] [WARNING ] :: 2022-12-31 00:40:36,808 - stderr:     logger = Logger.getLogger()
+[kivy ] [WARNING ] :: 2022-12-31 00:40:36,808 - stderr:              ^^^^^^^^^^^^^^^^
+[kivy ] [WARNING ] :: 2022-12-31 00:40:36,808 - stderr: AttributeError: 'Logger' object has no attribute 'getLogger'

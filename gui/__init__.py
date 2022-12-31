@@ -19,8 +19,10 @@ from kivy.core.text import Label
 from kivy.uix.progressbar import ProgressBar
 from kivy.uix.scrollview import ScrollView
 
+import data
 from crypto import is_valid_pass, AuthToken
 from data import my_db
+from kivy.logger import Logger
 
 
 class CreateAccountWindow(Screen):
@@ -77,6 +79,8 @@ class CreateAccountWindow(Screen):
 
 
 class LoginWindow(Screen):
+    message = StringProperty(defaultvalue="")
+
     box_color = get_color_from_hex("#0ab26c")
 
     def __init__(self, **kw):
@@ -85,12 +89,12 @@ class LoginWindow(Screen):
     def login(self):
         token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input.text or " ")
 
-        self.manager.current = "loading"
+        if token.is_valid():
+            data.my_db.start_database(token)
 
-        todoist_api_key = "c0c9886ed9370c334b7df1329ffd02024d1d2b01"
-        canvas_api_key = "2974~Ymjt5hMUEQ5Lay30hzwKSc3o4UPnY6vjhFgz3RSRUAPiMtEWacW6wAIqYV81FX6Y"
-        google_api = "AIzaSyDav-7cHMWNDrBDGKYsR0dBdqU3V2WzWJA"
-        canvas_header = {"Authorization": "Bearer " + canvas_api_key}
+            self.manager.current = "loading"
+        else:
+            self.message = "Invalid Credentials!"
 
     def new_account(self):
         self.manager.current = "create"
@@ -106,7 +110,7 @@ class LoadingWindow(Screen):
             self.manager.current = "pycalendar"
 
     def on_enter(self):
-        print("running")
+        Logger.info("Starting PyCalendar")
         Clock.schedule_interval(self.animate, 0.05)
 
 

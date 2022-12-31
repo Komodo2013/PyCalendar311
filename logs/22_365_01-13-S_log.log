@@ -1,0 +1,61 @@
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,247 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,327 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,365 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,976 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,977 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,977 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,977 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,978 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,978 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,979 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,979 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,979 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,979 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,985 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,986 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2022-12-31 01:13:31,995 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2022-12-31 01:13:32,009 - Starting Database
+[INFO    ] [kivy ] :: 2022-12-31 01:13:32,009 - Connecting to user_db
+[INFO    ] [kivy ] :: 2022-12-31 01:13:32,029 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2022-12-31 01:13:32,226 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2022-12-31 01:13:38,074 - Creating AuthToken for lfasd
+[INFO    ] [kivy ] :: 2022-12-31 01:13:38,077 - Base: Leaving application in progress...
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,077 - stderr: Traceback (most recent call last):
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,077 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\main.py", line 43, in <module>
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,078 - stderr:     gui.run()
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,078 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\app.py", line 956, in run
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,078 - stderr:     runTouchApp()
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,078 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 574, in runTouchApp
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:     EventLoop.mainloop()
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 341, in mainloop
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:     self.window.mainloop()
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\core\window\window_sdl2.py", line 763, in mainloop
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:     if self.dispatch('on_key_down', key,
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,079 - stderr:   File "kivy\_event.pyx", line 727, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,080 - stderr:   File "kivy\_event.pyx", line 1307, in kivy._event.EventObservers.dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,080 - stderr:   File "kivy\_event.pyx", line 1231, in kivy._event.EventObservers._dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,081 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\core\window\__init__.py", line 163, in _on_window_key_down
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,081 - stderr:     return self.dispatch('on_key_down', keycode, text, modifiers)
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,081 - stderr:            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,081 - stderr:   File "kivy\_event.pyx", line 727, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,082 - stderr:   File "kivy\_event.pyx", line 1307, in kivy._event.EventObservers.dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,082 - stderr:   File "kivy\_event.pyx", line 1231, in kivy._event.EventObservers._dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,082 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\uix\textinput.py", line 2941, in keyboard_on_key_down
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,083 - stderr:     self._key_down(key)
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,083 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\uix\textinput.py", line 2847, in _key_down
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,084 - stderr:     self.dispatch('on_text_validate')
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,084 - stderr:   File "kivy\_event.pyx", line 727, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,084 - stderr:   File "kivy\_event.pyx", line 1307, in kivy._event.EventObservers.dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,084 - stderr:   File "kivy\_event.pyx", line 1191, in kivy._event.EventObservers._dispatch
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,085 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\lang\builder.py", line 55, in custom_callback
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,085 - stderr:     exec(__kvlang__.co_value, idmap)
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,085 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\PyCalendar.kv", line 157, in <module>
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,085 - stderr:     on_text_validate: root.login()
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,085 - stderr: ^^^^^^^^
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,085 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\__init__.py", line 92, in login
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,086 - stderr:     if token.is_valid():
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,086 - stderr:        ^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,086 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\crypto\__init__.py", line 88, in is_valid
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,086 - stderr:     data.my_db.user_db_cursor.execute(
+[WARNING ] [kivy ] :: 2022-12-31 01:13:38,086 - stderr: sqlite3.OperationalError: near ",": syntax error

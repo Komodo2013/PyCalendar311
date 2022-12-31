@@ -4,10 +4,12 @@ from datetime import datetime, timedelta
 import data
 from crypto.hash import MyHash
 from crypto.crypto_utils import packet_to_alpha_numeric, bytes_to_alpha_numeric, packet_to_bytes, create_packets
+from kivy.logger import Logger
 
 
 def is_valid_pass(p):
-    """out = ""
+    """
+    out = ""
 
     if not re.search("[A-Z]", p) or not re.search("[a-z]", p):
         out = "Must include at least 1: Upper and Lower case letters"
@@ -21,20 +23,24 @@ def is_valid_pass(p):
             out = "Must include at least 1: number"
         else:
             out += ", number"
-
+    """
+    """
     if not re.search("[^A-Za-z0-9]", p):
         print("failed")
         if out == "":
             out = "Must include at least 1: symbol"
         else:
             out += ", symbol"
-    return [out == "", out]"""
+    """
+    # return [out == "", out]
     return True
 
 
 class AuthToken:
 
     def __init__(self, username, password):
+        Logger.info(f"Creating AuthToken for {username}")
+
         self.__create = datetime.now()
         self.__user = username
         self.__user_id = bytes_to_alpha_numeric(MyHash().set_internal_matrix(username).hash(bytes(username, "utf-8")))
@@ -44,6 +50,10 @@ class AuthToken:
         self.__pass_hash = hasher.hash(bytes(password, "utf-8"))
         del hasher
         self.__expiration = datetime.now() + timedelta(hours=12)
+
+        self.__canvas_api_key = ""
+        self.__todoist_api_key = ""
+        self.__google_api_key = ""
 
     def get_create(self):
         return self.__create
@@ -60,8 +70,26 @@ class AuthToken:
     def get_pass_hash(self):
         return self.__pass_hash
 
+    def is_expired(self):
+        if self.expiration >= self.create:
+            return True
+        return False
+
+    def get_canvas_api_key(self):
+        return self.__canvas_api_key
+
+    def get_todoist_api_key(self):
+        return self.__todoist_api_key
+
+    def get_google_api_key(self):
+        return self.__google_api_key
+
     def is_valid(self):
-        return data.my_db
+        data.my_db.user_db_cursor.execute(
+            f"""Select * from users where user_id = '{self.__user_id}' and pass_hash = '{memoryview(self.pass_hash)}'""")
+        r = data.my_db.user_db_cursor.fetchone()
+        print(r)
+        return r is not None and not self.is_expired()
 
     create = property(get_create, None, None)
     user = property(get_user, None, None)
@@ -69,16 +97,8 @@ class AuthToken:
     user_id = property(get_user_id, None, None)
     pass_hash = property(get_pass_hash, None, None)
 
-    def is_expired(self):
-        if self.expiration >= self.create:
-            raise Exception("Expired credentials")
-        return False
+    canvas_api_key = property(get_canvas_api_key, None, None)
+    todoist_api_key = property(get_todoist_api_key, None, None)
+    google_api_key = property(get_google_api_key, None, None)
 
-    def get_canvas_api_key(self):
-        pass
 
-    def get_todoist_api_key(self):
-        pass
-
-    def get_google_api_key(self):
-        pass

@@ -2,15 +2,11 @@ import sqlite3
 import sqlite3 as sq
 
 import crypto
+from kivy.logger import Logger
 
 
 def get_user_database(user):
     return ""
-
-
-def worker(task, cursor):
-    result = cursor.execute(task)
-    return result
 
 
 class DB:
@@ -19,8 +15,13 @@ class DB:
     task_db = False
     task_db_cursor = False
 
+    def __init__(self):
+        Logger.info(f"Starting Database")
+
+
     def start_user_db(self):
         if not self.user_db:
+            Logger.info("Connecting to user_db")
             self.user_db = sq.connect("data/users.db")
             self.user_db_cursor = self.user_db.cursor()
 
@@ -36,12 +37,15 @@ class DB:
 
     def start_database(self, user):
         if not self.task_db:
+            Logger.info("Connecting to task_db")
             self.task_db = sq.connect(get_user_database(user))
             self.task_db_cursor = self.task_db.cursor()
 
         return self
 
     def user_exists(self, user_id):
+        Logger.info("Finding user")
+
         if not self.user_db:
             raise Exception("Database not initialized")
 
@@ -52,6 +56,8 @@ class DB:
             return False
 
     def add_user(self, token):
+        Logger.info("Connecting to task_db")
+
         if not self.user_db:
             raise Exception("Database not initialized")
         self.user_db_cursor.execute(f"""insert into users (user_id, pass_hash) Values (?, ?)""",

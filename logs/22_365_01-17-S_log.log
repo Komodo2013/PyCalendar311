@@ -1,0 +1,22 @@
+[INFO    ] [kivy ] :: 2022-12-31 01:17:23,574 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2022-12-31 01:17:23,652 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2022-12-31 01:17:23,684 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,298 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,299 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,299 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,299 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,300 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,300 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,300 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,300 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,300 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,300 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,306 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,307 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,316 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,327 - Starting Database
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,327 - Connecting to user_db
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,345 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2022-12-31 01:17:24,505 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2022-12-31 01:17:34,342 - Creating AuthToken for lester
+[INFO    ] [kivy ] :: 2022-12-31 01:18:41,971 - Base: Leaving application in progress...

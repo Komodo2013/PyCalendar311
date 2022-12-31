@@ -114,6 +114,18 @@ WindowManager:
         pos: root.width/2 - 192, root.height *.6
         size: 384, 128
 
+    Label:
+        id: msg
+
+        size_hint: (None, None)
+        pos: root.width/2 - 128, root.height *.53 - 160
+        size: 256, 30
+
+        color: .9, 0, 0, 1
+        font_size: 16
+        text: root.message
+
+
     TextInput:
         id: user_input
 

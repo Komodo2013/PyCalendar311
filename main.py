@@ -7,20 +7,37 @@ kivy
 kivy-garden
 """
 
+import logging
+import datetime
+from kivy.logger import Logger
+
+timestamp = datetime.datetime.now().strftime("%y_%j_%H-%M-S")
+
+l = open(f"logs/{timestamp}_log.log", "w+")
+l.close()
+
+logging.basicConfig(filename=f"logs/{timestamp}_log.log",
+                    format="[%(name)-5s] [%(levelname)-8s] :: %(asctime)s - %(message)s",
+                    filemode="a",
+                    datefmt="%D",
+                    level=logging.INFO)
+
+handle = logging.FileHandler(f"logs/{timestamp}_log.log", encoding="utf-8")
+handle.set_name("Logger")
+handle.setLevel(logging.INFO)
+handle.setFormatter(logging.Formatter("[%(levelname)-8s] [%(name)-5s] :: %(asctime)s - %(message)s"))
+Logger.addHandler(handle)
+
 import plyer
 
 import gui
-import logging
 
-logging.basicConfig(filename="logs.txt", encoding="utf-8",
-                    format="[%(name)-5s] [%(levelname)-8s] :: %(asctime)s - %(message)s", filemode="w")
-log = logging.Logger("Logger", level=logging.INFO)
-
-log.info("Starting PyCalendar")
+logging.info("Starting PyCalendar")
 
 gui = gui.PyCalendarApp()
 
-print("finished init")
+logging.info("Finished Initialization")
+
 
 if __name__ == "__main__":
     gui.run()
