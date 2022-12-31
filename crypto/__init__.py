@@ -3,11 +3,11 @@ from datetime import datetime, timedelta
 
 import data
 from crypto.hash import MyHash
-from crypto.crypto_utils import packet_to_alpha_numeric, bytes_to_alpha_numeric
+from crypto.crypto_utils import packet_to_alpha_numeric, bytes_to_alpha_numeric, packet_to_bytes, create_packets
 
 
 def is_valid_pass(p):
-    out = ""
+    """out = ""
 
     if not re.search("[A-Z]", p) or not re.search("[a-z]", p):
         out = "Must include at least 1: Upper and Lower case letters"
@@ -28,7 +28,8 @@ def is_valid_pass(p):
             out = "Must include at least 1: symbol"
         else:
             out += ", symbol"
-    return [out == "", out]
+    return [out == "", out]"""
+    return True
 
 
 class AuthToken:
@@ -37,10 +38,10 @@ class AuthToken:
         self.__create = datetime.now()
         self.__user = username
         self.__user_id = bytes_to_alpha_numeric(MyHash().set_internal_matrix(username).hash(bytes(username, "utf-8")))
-        self.__key = MyHash().set_internal_matrix(username).hash(bytes(password, "utf-8"))
-        hasher = MyHash()
-        hasher.internal_matrix = self.__key
-        self.__pass_hash = "" #hasher.hash(bytes(password, "utf-8"))
+        hasher = MyHash().set_internal_matrix(username)
+        hasher.internal_matrix = hasher.hash_packs(create_packets(bytes(password, "utf-8")), iterations=10)
+        self.__key = packet_to_bytes(hasher.internal_matrix)
+        self.__pass_hash = hasher.hash(bytes(password, "utf-8"))
         del hasher
         self.__expiration = datetime.now() + timedelta(hours=12)
 
@@ -49,9 +50,6 @@ class AuthToken:
 
     def get_user(self):
         return self.__user
-
-    def get_key(self):
-        return self.__key
 
     def get_expiration(self):
         return self.__expiration
@@ -67,7 +65,6 @@ class AuthToken:
 
     create = property(get_create, None, None)
     user = property(get_user, None, None)
-    key = property(get_key, None, None)
     expiration = property(get_expiration, None, None)
     user_id = property(get_user_id, None, None)
     pass_hash = property(get_pass_hash, None, None)

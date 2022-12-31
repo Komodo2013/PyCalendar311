@@ -10,6 +10,13 @@ kivy-garden
 import plyer
 
 import gui
+import logging
+
+logging.basicConfig(filename="logs.txt", encoding="utf-8",
+                    format="[%(name)-5s] [%(levelname)-8s] :: %(asctime)s - %(message)s", filemode="w")
+log = logging.Logger("Logger", level=logging.INFO)
+
+log.info("Starting PyCalendar")
 
 gui = gui.PyCalendarApp()
 

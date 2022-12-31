@@ -1,4 +1,8 @@
+import sqlite3
 import sqlite3 as sq
+
+import crypto
+
 
 def get_user_database(user):
     return ""
@@ -27,6 +31,7 @@ class DB:
             enc_todoist_key BLOB,
             enc_google_key BLOB
         );""")
+        self.user_db.commit()
         return self
 
     def start_database(self, user):
@@ -40,18 +45,18 @@ class DB:
         if not self.user_db:
             raise Exception("Database not initialized")
 
-        worker("""
-                """, self.user_db_cursor)
+        try:
+            self.user_db_cursor.execute(f"""Select * from users where user_id = '{user_id}'""")
+            return len(self.user_db_cursor.fetchall()) > 0
+        except sqlite3.OperationalError:
+            return False
 
     def add_user(self, token):
         if not self.user_db:
             raise Exception("Database not initialized")
-
-        worker(f"""INSERT INTO users (user_hash, pass_hash, enc_canvas_key, enc_todoist_key, enc_google_key)
-         Values({token}
-        )
-        """, self.user_db_cursor)
-
+        self.user_db_cursor.execute(f"""insert into users (user_id, pass_hash) Values (?, ?)""",
+                                    [token.user_id, memoryview(token.pass_hash)])
+        self.user_db.commit()
         return self
 
 

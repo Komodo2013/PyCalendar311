@@ -29,12 +29,21 @@ class CreateAccountWindow(Screen):
     box_color = get_color_from_hex("#0ab26c")
 
     def create(self):
-        token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input_1.text or " ")
+        uname = self.ids.user_input.text.strip() or " "
+        upass1 = self.ids.pass_input_1.text.strip() or " "
+        upass2 = self.ids.pass_input_2.text.strip() or " "
+
+        if uname == " ":
+            self.manager.current = "login"
+            return
+
+        token = AuthToken(uname, upass1)
         if my_db.user_exists(token.user_id):
-            self.message = "User already taken"
-        elif not is_valid_pass(self.ids.pass_input_1.text) or \
-                self.ids.pass_input_1.text is not self.ids.pass_input_2.text:
+            self.message = "User already exists!"
+        elif not is_valid_pass(upass1):
             self.message = "Invalid password"
+        elif not upass1 == upass2:
+            self.message = "Passwords aren't equal"
         else:
             my_db.add_user(token)
             self.manager.current = "login"
@@ -48,6 +57,24 @@ class CreateAccountWindow(Screen):
         else:
             self.message = ""
 
+    def _on_keyboard_down(self, instance, keyboard, keycode, text, modifiers):
+        print(keycode)
+        if self.ids.button.focus and keycode == 40:  # 40 - Enter key pressed
+            self.create()
+        elif self.ids.pass_input_2.focus and keycode == 13:
+            self.validate_confirm()
+            self.ids.button.focus = True
+        elif self.ids.pass_input_1.focus and keycode == 13:
+            self.validate()
+            self.ids.pass_input_2.focus = True
+        elif self.ids.user_input.focus and keycode == 13:
+            t = AuthToken(self.ids.user_input.strip() or " ", " ")
+            if my_db.user_exists(t.user_id):
+                self.message = "User already exists!"
+
+    def return_(self):
+        self.manager.current = "login"
+
 
 class LoginWindow(Screen):
     box_color = get_color_from_hex("#0ab26c")
@@ -57,7 +84,7 @@ class LoginWindow(Screen):
 
     def login(self):
         token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input.text or " ")
-        print(token.get_key())
+
         self.manager.current = "loading"
 
         todoist_api_key = "c0c9886ed9370c334b7df1329ffd02024d1d2b01"
