@@ -87,9 +87,7 @@ class AuthToken:
     def is_valid(self):
         data.my_db.user_db_cursor.execute(
             f"""Select * from users where user_id = '{self.__user_id}' and pass_hash = '{memoryview(self.pass_hash)}'""")
-        r = data.my_db.user_db_cursor.fetchone()
-        print(r)
-        return r is not None and not self.is_expired()
+        return data.my_db.user_db_cursor.fetchone() is not None and not self.is_expired()
 
     create = property(get_create, None, None)
     user = property(get_user, None, None)

@@ -6,7 +6,7 @@ from kivy.logger import Logger
 
 
 def get_user_database(user):
-    return ""
+    return f"data/{user}"
 
 
 class DB:
@@ -35,10 +35,10 @@ class DB:
         self.user_db.commit()
         return self
 
-    def start_database(self, user):
+    def start_database(self, AuthToken):
         if not self.task_db:
             Logger.info("Connecting to task_db")
-            self.task_db = sq.connect(get_user_database(user))
+            self.task_db = sq.connect(get_user_database(AuthToken.user_id))
             self.task_db_cursor = self.task_db.cursor()
 
         return self
