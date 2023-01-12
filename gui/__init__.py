@@ -88,7 +88,7 @@ class LoginWindow(Screen):
 
     def login(self):
         token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input.text or " ")
-
+        print(token.is_valid())
         if token.is_valid():
             data.my_db.start_database(token)
 

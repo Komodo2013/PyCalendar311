@@ -1,3 +1,4 @@
+import base64
 import re
 from datetime import datetime, timedelta
 
@@ -43,13 +44,15 @@ class AuthToken:
 
         self.__create = datetime.now()
         self.__user = username
-        self.__user_id = bytes_to_alpha_numeric(MyHash().set_internal_matrix(username).hash(bytes(username, "utf-8")))
+        self.__user_id = base64.b64encode(
+            MyHash().set_internal_matrix(username).hash(bytes(username, "utf-8"))).decode('ascii')
+        print(self.__user_id)
         hasher = MyHash().set_internal_matrix(username)
         hasher.internal_matrix = hasher.hash_packs(create_packets(bytes(password, "utf-8")), iterations=10)
         self.__key = packet_to_bytes(hasher.internal_matrix)
-        self.__pass_hash = hasher.hash(bytes(password, "utf-8"))
+        self.__pass_hash = base64.b64encode(hasher.hash(bytes(password, "utf-8"))).decode('ascii')
         del hasher
-        self.__expiration = datetime.now() + timedelta(hours=12)
+        self.__expiration = datetime.now() + timedelta(hours=3)
 
         self.__canvas_api_key = ""
         self.__todoist_api_key = ""
@@ -71,23 +74,31 @@ class AuthToken:
         return self.__pass_hash
 
     def is_expired(self):
-        if self.expiration >= self.create:
+        if self.expiration <= datetime.now():
             return True
         return False
 
     def get_canvas_api_key(self):
-        return self.__canvas_api_key
+        if self.is_valid():
+            return self.__canvas_api_key
+        else:
+            return False
 
     def get_todoist_api_key(self):
-        return self.__todoist_api_key
+        if self.is_valid():
+            return self.__todoist_api_key
+        else:
+            return False
 
     def get_google_api_key(self):
-        return self.__google_api_key
+        if self.is_valid():
+            return self.__google_api_key
+        else:
+            return False
 
     def is_valid(self):
-        data.my_db.user_db_cursor.execute(
-            f"""Select * from users where user_id = '{self.__user_id}' and pass_hash = '{memoryview(self.pass_hash)}'""")
-        return data.my_db.user_db_cursor.fetchone() is not None and not self.is_expired()
+        print(data.my_db.get_user(self.__user_id), not self.is_expired())
+        return data.my_db.get_user(self.__user_id) is not None and not self.is_expired()
 
     create = property(get_create, None, None)
     user = property(get_user, None, None)
