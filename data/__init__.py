@@ -1,7 +1,6 @@
-import sqlite3
 import sqlite3 as sq
+import sqlcipher
 
-import crypto
 from kivy.logger import Logger
 import json
 
@@ -21,8 +20,9 @@ class DB:
             if u["user_id"] == user_id:
                 return u
 
-    def get_user_database(self, user):
-        return f"data/{user}"
+    def get_user_database(self, AuthToken):
+
+        return f"data/{AuthToken.user_id}"
 
     def start_user_db(self):
         if not self.user_db:
@@ -41,7 +41,7 @@ class DB:
     def start_database(self, AuthToken):
         if not self.task_db:
             Logger.info("Connecting to task_db")
-            self.task_db = sq.connect(self.get_user_database(AuthToken.user_id))
+            self.task_db = sq.connect(self.get_user_database(AuthToken))
             self.task_db_cursor = self.task_db.cursor()
 
         return self
@@ -70,6 +70,23 @@ class DB:
         with open("data/users.json", "a+") as users:
             json.dump(user, users, ensure_ascii=True)
         return self
+
+    def update_token(self, AuthToken):
+        Logger.info("Updating user entry")
+        user = {
+            "user_id": AuthToken.get_user_id(),
+            "password": AuthToken.get_pass_hash(),
+            "canvas_api_key": AuthToken.get_canvas_api_key,
+            "todoist_api_key": AuthToken.get_todoist_api_key,
+            "google_api_key": AuthToken.get_google_api_key
+        }
+
+        for i in range(len(self.user_db)):
+            if self.user_db[i]["user_id"] == user["user_id"]:
+                self.user_db[i] = user
+
+        with open("data/users.json", "w+") as users:
+            json.dump(self.user_db, users, ensure_ascii=True)
 
 
 my_db = DB()

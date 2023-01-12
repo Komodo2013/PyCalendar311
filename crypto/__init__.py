@@ -82,19 +82,40 @@ class AuthToken:
         if self.is_valid():
             return self.__canvas_api_key
         else:
-            return False
+            return None
 
     def get_todoist_api_key(self):
         if self.is_valid():
             return self.__todoist_api_key
         else:
-            return False
+            return None
 
     def get_google_api_key(self):
         if self.is_valid():
             return self.__google_api_key
         else:
-            return False
+            return None
+
+    def set_canvas_api_key(self, key):
+        if self.is_valid():
+            self.__canvas_api_key = key
+            return self
+        else:
+            return None
+
+    def set_todoist_api_key(self, key):
+        if self.is_valid():
+            self.__todoist_api_key = key
+            return self
+        else:
+            return None
+
+    def set_google_api_key(self, key):
+        if self.is_valid():
+            self.__google_api_key = key
+            return self
+        else:
+            return None
 
     def is_valid(self):
         print(data.my_db.get_user(self.__user_id), not self.is_expired())
@@ -106,8 +127,8 @@ class AuthToken:
     user_id = property(get_user_id, None, None)
     pass_hash = property(get_pass_hash, None, None)
 
-    canvas_api_key = property(get_canvas_api_key, None, None)
-    todoist_api_key = property(get_todoist_api_key, None, None)
-    google_api_key = property(get_google_api_key, None, None)
+    canvas_api_key = property(get_canvas_api_key, set_canvas_api_key, None)
+    todoist_api_key = property(get_todoist_api_key, set_todoist_api_key, None)
+    google_api_key = property(get_google_api_key, set_google_api_key, None)
 
 
