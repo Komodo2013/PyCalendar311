@@ -1,14 +1,14 @@
 import sqlite3 as sq
-import sqlcipher
 
 from kivy.logger import Logger
 import json
+
+from data.encryptedDB import EncryptedDB
 
 
 class DB:
     user_db = False
     task_db = False
-    task_db_cursor = False
 
     def __init__(self):
         Logger.info(f"Starting Database")
@@ -21,8 +21,9 @@ class DB:
                 return u
 
     def get_user_database(self, AuthToken):
-
-        return f"data/{AuthToken.user_id}"
+        if not self.task_db:
+            self.task_db = EncryptedDB(AuthToken)
+        return self.task_db
 
     def start_user_db(self):
         if not self.user_db:
@@ -85,8 +86,10 @@ class DB:
             if self.user_db[i]["user_id"] == user["user_id"]:
                 self.user_db[i] = user
 
-        with open("data/users.json", "w+") as users:
-            json.dump(self.user_db, users, ensure_ascii=True)
+        with open("data/users.json", "r+") as users:
+            for line in users:
+                if user["user_id"] in line:
+                    json.dump(user, users, ensure_ascii=True)
 
 
 my_db = DB()

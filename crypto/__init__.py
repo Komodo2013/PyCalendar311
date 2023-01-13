@@ -58,6 +58,11 @@ class AuthToken:
         self.__todoist_api_key = ""
         self.__google_api_key = ""
 
+    def get_enc_key(self):
+        hasher = MyHash()
+        hasher.internal_matrix = self.__key
+
+
     def get_create(self):
         return self.__create
 
