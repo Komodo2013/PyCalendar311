@@ -1,9 +1,11 @@
-import sqlite3 as sq
-
 from kivy.logger import Logger
 import json
 
 from data.encryptedDB import EncryptedDB
+
+
+def create_tables(EncryptedDB):
+    pass
 
 
 class DB:
@@ -42,8 +44,9 @@ class DB:
     def start_database(self, AuthToken):
         if not self.task_db:
             Logger.info("Connecting to task_db")
-            self.task_db = sq.connect(self.get_user_database(AuthToken))
-            self.task_db_cursor = self.task_db.cursor()
+            self.task_db = EncryptedDB(AuthToken)
+
+            create_tables(self.task_db)
 
         return self
 
