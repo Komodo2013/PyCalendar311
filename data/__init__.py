@@ -1,10 +1,11 @@
 from kivy.logger import Logger
 import json
+import sqlite3 as sq
 
 from data.encryptedDB import EncryptedDB
 
 
-def create_tables(EncryptedDB):
+class UnauthorizedAccess(Exception):
     pass
 
 
@@ -37,16 +38,23 @@ class DB:
                 if len(json_file) == 0:
                     self.user_db = []
                 else:
-                    self.user_db = json.load(users)
-                print(self.user_db)
+                    self.user_db = json.loads(json_file)
         return self
 
     def start_database(self, AuthToken):
         if not self.task_db:
             Logger.info("Connecting to task_db")
-            self.task_db = EncryptedDB(AuthToken)
+            if not AuthToken.is_valid():
+                raise UnauthorizedAccess
+            # Create database file if it doesn't exist
+            with open(f"data/{AuthToken.user_id[-10:]}.db", "w+"):
+                pass
 
-            create_tables(self.task_db)
+            try:
+                self.task_db = sq.connect(f"data/{AuthToken.user_id[-10:]}.db")
+            except sq.Error as e:
+                Logger.error(e)
+                raise e
 
         return self
 

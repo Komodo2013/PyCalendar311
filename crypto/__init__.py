@@ -1,10 +1,12 @@
 import base64
-import re
+from ctypes import c_ushort
 from datetime import datetime, timedelta
 
+import crypto.crypto_utils
 import data
 from crypto.hash import MyHash
-from crypto.crypto_utils import packet_to_alpha_numeric, bytes_to_alpha_numeric, packet_to_bytes, create_packets
+from crypto.crypto_utils import packet_to_alpha_numeric, bytes_to_alpha_numeric, packet_to_bytes, create_packets, \
+    salt_galois_multiply
 from kivy.logger import Logger
 
 
@@ -59,9 +61,8 @@ class AuthToken:
         self.__google_api_key = ""
 
     def get_enc_key(self, salt):
-        hasher = MyHash()
-        hasher.internal_matrix = self.__key
-        return hasher.hash(salt)
+        return base64.b64encode(salt_galois_multiply(int.from_bytes(self.__key, "big"), salt, 16)
+                                .to_bytes(length=32, byteorder='big', signed=False)).decode('ascii')
 
     def get_create(self):
         return self.__create
@@ -135,5 +136,3 @@ class AuthToken:
     canvas_api_key = property(get_canvas_api_key, set_canvas_api_key, None)
     todoist_api_key = property(get_todoist_api_key, set_todoist_api_key, None)
     google_api_key = property(get_google_api_key, set_google_api_key, None)
-
-

@@ -215,6 +215,21 @@ def string_to_packets(string):
     return create_packets(bytearray(string, 'utf-8'))
 
 
+def salt_galois_multiply(a, b, salt_size):
+    modulo = 2 ** 80
+    p = a
+    for i in range(salt_size):
+        if b & 0x01 == 0x01:
+            p ^= a
+        b = b >> 1
+        if a & 0x80 == 0x80:
+            a = (a << 1) % modulo
+            a ^= 0x1b
+        else:
+            a = (a << 1) % modulo
+    return p % modulo
+
+
 def galois_multiply(a, b):
     p = 0x00
     for i in range(8):
