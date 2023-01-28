@@ -124,7 +124,6 @@ class AuthToken:
             return None
 
     def is_valid(self):
-        print(data.my_db.get_user(self.__user_id), not self.is_expired())
         return data.my_db.get_user(self.__user_id) is not None and not self.is_expired()
 
     create = property(get_create, None, None)
