@@ -48,6 +48,9 @@ class CreateAccountWindow(Screen):
             self.message = "Passwords aren't equal"
         else:
             my_db.add_user(token)
+            self.ids.user_input.text = ""
+            self.ids.pass_input_1.text = ""
+            self.ids.pass_input_2.text = ""
             self.manager.current = "login"
 
     def validate(self):
@@ -75,6 +78,9 @@ class CreateAccountWindow(Screen):
                 self.message = "User already exists!"
 
     def return_(self):
+        self.ids.user_input.text = ""
+        self.ids.pass_input_1.text = ""
+        self.ids.pass_input_2.text = ""
         self.manager.current = "login"
 
 
@@ -90,6 +96,9 @@ class LoginWindow(Screen):
         token = AuthToken(self.ids.user_input.text or " ", self.ids.pass_input.text or " ")
         if token.is_valid():
             data.my_db.start_task_db(token)
+
+            self.ids.user_input.text = ""
+            self.ids.pass_input.text = ""
 
             self.manager.current = "loading"
         else:

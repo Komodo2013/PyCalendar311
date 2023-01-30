@@ -1,0 +1,33 @@
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,265 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,349 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,384 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,909 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,910 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,910 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,911 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,912 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,912 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,912 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,912 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,912 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,912 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,921 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,922 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,937 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,948 - Starting Database
+[INFO    ] [kivy ] :: 2023-01-27 22:27:36,966 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2023-01-27 22:27:37,134 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2023-01-27 22:27:44,495 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:27:44,499 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:27:44,499 - Writing new user entry
+[INFO    ] [kivy ] :: 2023-01-27 22:27:44,499 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:27:54,770 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:27:54,774 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:28:13,520 - Creating AuthToken for jacob1
+[INFO    ] [kivy ] :: 2023-01-27 22:28:13,523 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:28:13,523 - Writing new user entry
+[INFO    ] [kivy ] :: 2023-01-27 22:28:13,523 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:28:19,555 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:28:19,559 - Connecting to task_db
+[INFO    ] [kivy ] :: 2023-01-27 22:28:19,971 - Starting PyCalendar
+[INFO    ] [kivy ] :: 2023-01-27 22:28:25,339 - Base: Leaving application in progress...

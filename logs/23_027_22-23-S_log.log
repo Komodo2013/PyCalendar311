@@ -1,0 +1,26 @@
+[INFO    ] [kivy ] :: 2023-01-27 22:23:14,733 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2023-01-27 22:23:14,824 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2023-01-27 22:23:14,857 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,395 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,396 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,396 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,396 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,397 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,397 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,397 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,397 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,397 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,397 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,405 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,406 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,415 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,425 - Starting Database
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,446 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2023-01-27 22:23:15,636 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2023-01-27 22:23:24,797 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:23:24,801 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:23:24,801 - Writing new user entry
+[INFO    ] [kivy ] :: 2023-01-27 22:23:24,801 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:23:59,249 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:23:59,252 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:24:03,809 - Base: Leaving application in progress...

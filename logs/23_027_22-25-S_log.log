@@ -1,0 +1,20 @@
+[INFO    ] [kivy ] :: 2023-01-27 22:25:07,693 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2023-01-27 22:25:07,774 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2023-01-27 22:25:07,807 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,313 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,314 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,314 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,315 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,321 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,322 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,332 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,345 - Starting Database
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,364 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2023-01-27 22:25:08,525 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2023-01-27 22:25:52,942 - Base: Leaving application in progress...

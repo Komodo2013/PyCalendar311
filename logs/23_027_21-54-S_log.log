@@ -1,0 +1,27 @@
+[INFO    ] [kivy ] :: 2023-01-27 21:54:26,674 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2023-01-27 21:54:26,836 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2023-01-27 21:54:26,973 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,566 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,568 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,569 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,569 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,569 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,569 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,570 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,570 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,570 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,570 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,578 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,580 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,606 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 21:54:27,627 - Starting Database
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,628 - stderr: Traceback (most recent call last):
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,628 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\main.py", line 33, in <module>
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,628 - stderr:     import gui
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,628 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\__init__.py", line 22, in <module>
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,628 - stderr:     import data
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,628 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\data\__init__.py", line 98, in <module>
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,629 - stderr:     my_db.start_user_db()
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,629 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\data\__init__.py", line 38, in start_user_db
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,629 - stderr:     with self.user_db.cursor() as cur:
+[WARNING ] [kivy ] :: 2023-01-27 21:54:27,629 - stderr: TypeError: 'sqlite3.Cursor' object does not support the context manager protocol

@@ -1,0 +1,58 @@
+[INFO    ] [kivy ] :: 2023-01-27 22:08:55,576 - Factory: 190 symbols loaded
+[INFO    ] [kivy ] :: 2023-01-27 22:08:55,659 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2023-01-27 22:08:55,711 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,278 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,279 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,279 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,280 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,280 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,280 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,280 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,280 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,280 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,281 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,286 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,287 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,297 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,305 - Starting Database
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,324 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2023-01-27 22:08:56,485 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2023-01-27 22:09:06,919 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:09:06,923 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:09:06,923 - Base: Leaving application in progress...
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,923 - stderr: Traceback (most recent call last):
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,923 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\main.py", line 43, in <module>
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,923 - stderr:     gui.run()
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,924 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\app.py", line 956, in run
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,924 - stderr:     runTouchApp()
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,924 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 574, in runTouchApp
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,924 - stderr:     EventLoop.mainloop()
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,924 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 339, in mainloop
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:     self.idle()
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 383, in idle
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:     self.dispatch_input()
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 334, in dispatch_input
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:     post_dispatch_input(*pop(0))
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 302, in post_dispatch_input
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,925 - stderr:     wid.dispatch('on_touch_up', me)
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,926 - stderr:   File "kivy\_event.pyx", line 731, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,926 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\uix\behaviors\button.py", line 179, in on_touch_up
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,926 - stderr:     self.dispatch('on_release')
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,926 - stderr:   File "kivy\_event.pyx", line 727, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,927 - stderr:   File "kivy\_event.pyx", line 1307, in kivy._event.EventObservers.dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,927 - stderr:   File "kivy\_event.pyx", line 1191, in kivy._event.EventObservers._dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\lang\builder.py", line 55, in custom_callback
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:     exec(__kvlang__.co_value, idmap)
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\PyCalendar.kv", line 98, in <module>
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:     on_release: root.manager.transition = SlideTransition(); root.manager.transition.direction = "up"; root.create()
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:                                                                                    ^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\__init__.py", line 43, in create
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,928 - stderr:     if my_db.user_exists(token.user_id):
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\data\__init__.py", line 66, in user_exists
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:     print(self.get_user(user_id))
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:           ^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\data\__init__.py", line 18, in get_user
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:     r = cur.execute(f"select * from Users where user_id=?", (user_id))
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:09:06,929 - stderr: sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 88 supplied.

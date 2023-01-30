@@ -1,0 +1,55 @@
+[INFO    ] [kivy ] :: 2023-01-27 22:09:12,433 - Factory: 190 symbols loaded
+[WARNING ] [kivy ] :: 2023-01-27 22:09:12,532 - stderr: pydev debugger: Unable to find real location for: <frozen io>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:12,560 - Image: Providers: img_tex, img_dds, img_sdl2, img_pil (img_ffpyplayer ignored)
+[INFO    ] [kivy ] :: 2023-01-27 22:09:12,609 - Window: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,110 - GL: Using the "OpenGL" graphics system
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,111 - GL: GLEW initialization succeeded
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,111 - GL: Backend used <glew>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,112 - GL: OpenGL version <b'4.6.14800 Compatibility Profile Context 22.5.1 30.0.15021.11005'>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,112 - GL: OpenGL vendor <b'ATI Technologies Inc.'>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,112 - GL: OpenGL renderer <b'AMD Radeon RX 6700 XT'>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,113 - GL: OpenGL parsed version: 4, 6
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,113 - GL: Shading version <b'4.60'>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,113 - GL: Texture max size <16384>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,113 - GL: Texture max units <32>
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,123 - Window: auto add sdl2 input provider
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,124 - Window: virtual keyboard not allowed, single mode, not docked
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,140 - Text: Provider: sdl2
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,155 - Starting Database
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,187 - GL: NPOT texture support is available
+[INFO    ] [kivy ] :: 2023-01-27 22:09:13,406 - Base: Start application main loop
+[INFO    ] [kivy ] :: 2023-01-27 22:09:34,424 - Creating AuthToken for jacob
+[INFO    ] [kivy ] :: 2023-01-27 22:09:34,440 - Finding user
+[INFO    ] [kivy ] :: 2023-01-27 22:11:56,786 - Base: Leaving application in progress...
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,786 - stderr: Traceback (most recent call last):
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,786 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 574, in runTouchApp
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,787 - stderr:     EventLoop.mainloop()
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,787 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 339, in mainloop
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,787 - stderr:     self.idle()
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,787 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 383, in idle
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,787 - stderr:     self.dispatch_input()
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,787 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 334, in dispatch_input
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,788 - stderr:     post_dispatch_input(*pop(0))
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,788 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\base.py", line 302, in post_dispatch_input
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,788 - stderr:     wid.dispatch('on_touch_up', me)
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,788 - stderr:   File "kivy\_event.pyx", line 731, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,789 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\uix\behaviors\button.py", line 179, in on_touch_up
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,789 - stderr:     self.dispatch('on_release')
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,789 - stderr:   File "kivy\_event.pyx", line 727, in kivy._event.EventDispatcher.dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,789 - stderr:   File "kivy\_event.pyx", line 1307, in kivy._event.EventObservers.dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,790 - stderr:   File "kivy\_event.pyx", line 1191, in kivy._event.EventObservers._dispatch
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,790 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\venv\Lib\site-packages\kivy\lang\builder.py", line 55, in custom_callback
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,790 - stderr:     exec(__kvlang__.co_value, idmap)
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\PyCalendar.kv", line 98, in <module>
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:     on_release: root.manager.transition = SlideTransition(); root.manager.transition.direction = "up"; root.create()
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:                                                                                    ^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\gui\__init__.py", line 43, in create
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:     if my_db.user_exists(token.user_id):
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,791 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\data\__init__.py", line 66, in user_exists
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,792 - stderr:     print(self.get_user(user_id))
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,792 - stderr:           ^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,792 - stderr:   File "C:\Users\jacob\PycharmProjects\PyCalendar\data\__init__.py", line 18, in get_user
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,792 - stderr:     r = cur.execute(f"select * from Users where user_id=?", (user_id))
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,792 - stderr:         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[WARNING ] [kivy ] :: 2023-01-27 22:11:56,792 - stderr: sqlite3.ProgrammingError: Incorrect number of bindings supplied. The current statement uses 1, and there are 88 supplied.
